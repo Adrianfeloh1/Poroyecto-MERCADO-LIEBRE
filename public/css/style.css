@@ -1,4 +1,4 @@
-:root{
+:root {
     --Amarillo: #EAC926;
     --Azul: #03264C;
     --Celeste: #1259c3;
@@ -7,33 +7,64 @@
     --Verde: #39b54a;
 }
 
-*{
+.banner {
+    width: 100%;
+}
+
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-img{
-    width: 100%;
-}
+
 
 body {
     background-color: var(--Gris);
-    margin: auto;
     font-family: "roboto";
-    font-size: 12px;  
+    font-size: 12px;
 }
 
-.main-header{
+.main-header {
     background-color: var(--Amarillo);
-    width : 100%;
-    
+    width: 100%;
 }
 
-.logo{
-    width: 200px;
-    padding: 30px;
+.top-bar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
+
+.lupa {   
+    font-size: 12px;      
+}
+
+.barra-busqueda {
+    display: flex;
+    width: 50%;
+    flex-grow: 0.5;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 50%;
+    flex-grow: 0.5;
+    background-position-y: 35%;
+}
+
+.compra_cuotas_centrada {
+    text-align: center;
+    padding: 10px;
+    align-self: center;
+}
+
+/* -------------------------MAIN--------------------------- */
+
 
 
 /* con esto se le quitan los puntos de viñetas a la lista */
@@ -44,17 +75,18 @@ body {
     display: none;
 }
 
-.main-header-bottom-bar a{
-    text-decoration: none;
-    color: #222222;
-    
-    padding: 1px 0; 
-    
-
+.main-header-bottom-bar li {
+    margin: 10px 5px;
 }
 
-.menu_icono{
-    background-color:#1259c3;
+.main-header-bottom-bar a {
+    text-decoration: none;
+    color: #222222;
+    padding: 1px 0;
+}
+
+.menu_icono {
+    background-color: #1259c3;
     color: white;
     display: block;
     max-width: 50px;
@@ -66,37 +98,33 @@ body {
     margin: auto;
 }
 
-/* -------------------------MAIN--------------------------- */
-
-main{
+main {
     margin: auto;
     width: 90%;
-    
 }
 
-.img-products{
-   width: 100%;
+.img-products {
+    width: 100%;
+}
+
+.contenedor01 {
+
+    text-align: center;
+    background-color: white;
+    margin: 5px;
 
 }
 
-.contenedor01{            
-        box-sizing: border-box;
-        text-align: center;
-        background-color: white;
-        margin: 5px;
-       
-}
+.contenedor02 {
 
-.contenedor02{
-   
-    box-sizing: border-box;
     padding: 15px;
     text-align: left;
-    border-top: solid 1px var(--Gris)    
+    border-top: solid 1px var(--Gris);
+    position: relative;
 }
 
-.camion-envio{
-    color: green;
+.camion-envio {
+    color: #39b54a;
     display: block;
     font-size: 16px;
     padding: 5px;
@@ -105,82 +133,74 @@ main{
     border: 1px solid #39b54a;
     background-color: #FFF;
     border-radius: 50%;
-    /* position: absolute; */
+    position: absolute;
     right: 20px;
-    top: -15px;    
+    top: -15px;
+    transition: transform, 450ms;
 }
 
-.precio-descuento{
-    border:solid red;
-    display:flex;
+.camion-envio:hover{
+    transform: rotate(-90deg);
+}
+
+
+.precio-descuento {
+    display: flex;
     justify-content: flex-start;
-    
 }
 
-.precio{
+.precio {
     font-size: 18px;
-    margin: 0 15px;
-
+    flex-grow: 0.30;
 }
 
-.descuentos_descripciones{
-    font-size: 16px;
-    margin: 0 15px;
+.descuentos_descripciones {
+    font-size: 15px;
+    color: #39b54a;
+    flex-grow: 0.70;
 }
 
-.compra_cuotas_centrada{
-    text-align: center;
-}
-.barra-busqueda{
-    background-color: white;
-    
-}
 
-.lupa{
-    color: black;
-    font-size: 20px;
-    margin-left: 20px;
-    
-}
-h2{
+h2 {
     font-size: 24px;
+    display: block;
 }
 
 
-.descripciones{
+.descripciones {
     font-size: 16px;
     display: none;
+    color: #666;
 }
 
-.credito{
+.credito {
     text-align: center;
-    margin-top: 40px;
 }
 
-.tarjeta{
+.tarjeta {
     text-align: center;
     font-size: 2em;
     color: #1259c3;
     margin-bottom: 10px;
 }
 
-.regalo{
+.regalo {
     text-align: center;
     margin-bottom: 10px;
 }
 
-.icono-regalo{
+.icono-regalo {
     text-align: center;
     font-size: 2em;
     color: #1259c3;
     margin: auto;
 }
 
-.seguridad{
+.seguridad {
     text-align: center;
 }
 
-.icono-seguridad{
+.icono-seguridad {
     text-align: center;
     font-size: 2em;
     color: #1259c3;
@@ -188,7 +208,7 @@ h2{
 }
 
 
-.footer_titulo{
+.footer_titulo {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -196,7 +216,7 @@ h2{
     color: #666;
 }
 
-.footer_centrado{
+.footer_centrado {
     text-align: center;
     font-size: 13px;
     line-height: 15px;
@@ -204,32 +224,235 @@ h2{
     color: #666;
 }
 
+footer {
+    margin-top: 20px;
+    padding: 20px;
+}
 
-@media (min-width: 361px){
-        
-    .menu_icono{
+footer section {
+    margin-bottom: 25px;
+
+}
+
+
+
+/* ----------------------------------formulario REGISTER---------------------------------- */
+
+.contenedor-main {
+    background-color: var(--Gris);
+    padding: 10px;
+    width: 85%;    
+    
+}
+
+.contenedor-casillas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 18px 12px 40px;
+    padding: 20px 0px 35px 0px;
+    width: 70%;
+    margin: auto;
+}
+
+.casillas {
+    margin-top: 15px;
+    width: 62%;
+    text-align: center;
+}
+
+.casillas-input {
+    width: 100%;
+    ;
+}
+
+.casilla-foto {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.categoria {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 16px;
+    background-color: #03264C;
+    color: #EAC926;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.boton {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: #03264C;
+    color: #EAC926;
+    border-radius: 3px;
+}
+
+.boton:hover {
+    background-color: #1259c3;
+}
+
+
+
+/* --------------------fin formiulario REGISTER--------------------- */
+
+/* ------------------------formulario LOGIN  ----------------------*/
+
+.contenedor-login {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 18px 12px 40px;
+    padding: 20px 0px 35px 0px;
+    width: 80%;
+    margin: auto;
+    font-size: 20px;
+}
+
+.contenedor-login h2{
+    margin-bottom: 20px;
+}
+
+.form-login{
+    margin-top: 20px;
+    
+}
+
+.casillas-login{
+    width: 50%;
+}
+
+.casillas-2{
+    width: 100%;    
+    margin-top: 10px;
+}
+
+.boton-login{
+    margin-top: 25px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: #03264C;
+    color: #EAC926;
+    border-radius: 3px;
+}
+
+.boton-login:hover {
+    background-color: #1259c3;
+}
+
+/* ------------------------Fin del formulario LOGIN  ----------------------*/
+
+@media (min-width: 361px) {
+
+    .barra-busqueda {
+        width: 30%;
+        flex-grow: 0.33;
+    }
+
+    .logo {
+        width: 30%;
+        flex-grow: 0.33;
+        align-self: center;
+    }
+
+    .compra_cuotas_centrada {
+        width: 30%;
+        flex-grow: 0.33;
+        align-self: center;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .menu_icono {
         display: none;
     }
 
+    h2 {
+        text-align: center;
+    }
+
     .main-header-bottom-bar ul {
-        
         display: block;
     }
 
-    .contenedor01{
+    .contenedor-padre {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .contenedor01 {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        width: 45%;
+        align-self: center;
     }
 
-    .descripciones{
+    .contenedor01:hover {
+        box-shadow: 0px 0px 15px rgb(100, 100, 100);
+        width: 45%;
+        align-self: center;
+    }
+
+    .descripciones {
         display: block;
-
-}
-
-@media (min-width:769px){
-    .main-header{
-        border: dotted 3px rgb(32, 156, 32);
-
     }
-    
-}
+
+    @media (min-width:769px) {
+
+        .main-header-bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header-bottom-bar ul {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .main-header-bottom-bar ul li {
+            margin: 0 15px;
+            display: flex;
+        }
+     
+        .contenedor01 {
+            width: 23%;
+            flex-grow: 0.33;
+            box-shadow: 0px 0px 0px rgb(100, 100, 100);
+        }
+
+        .contenedor01:hover {
+            box-shadow: 0px 0px 10px rgb(100, 100, 100);
+            width: 25%;
+        }
+
+        .descripciones{
+            color: transparent;
+        }
+
+        .descripciones:hover{
+            color:black
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0%;
+        }
+
+        footer section {
+            width: 30%;
+            padding: 0px;
+        }
+    }
 }

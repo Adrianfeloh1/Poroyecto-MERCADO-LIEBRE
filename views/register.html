@@ -17,19 +17,19 @@
 
 <body>
   <header class="main-header">
-    <div class="top bar"></div>
-    <img src="img/logo-mercado-liebre.svg" class="logo" alt="logo mercado liebre" />
-
-    <p class="barra-busqueda"> barra de busqueda de productos
-    <div class="lupa">
-      <i class="fas fa-search"></i>
+    <div class="top-bar">
+      <img src="img/logo-mercado-liebre.svg" class="logo" alt="logo mercado liebre" />
+      <form class="barra-busqueda" action="/login" method="POST"> 
+        <div>
+          <input type="text" name="busqueda" placeholder="Buscar productos, marcas"/>
+          <i class="fas fa-search lupa"></i>
+        </div>        
+      </form>
+      <p class="compra_cuotas_centrada">
+        <i class="fa-solid fa-money-bill-transfer"></i>compra en cuotas y sin
+        tarjeta de crédito
+      </p>
     </div>
-    </p>
-
-    <p class="compra_cuotas_centrada">
-      <i class="fa-solid fa-money-bill-transfer"></i>compra en cuotas y sin
-      tarjeta de crédito
-    </p>
 
     <nav class="main-header-bottom-bar">
       <ul>
@@ -60,115 +60,118 @@
     <br>
   </header>
   <!----------------------------------------- MAIN------------------------------------------------->
-  <main>
-    <form action="/register" method="POST">
-      <div>
-        <input type="text" name="name" placeholder="Nombre y apellido" />
-      </div>
+  <main class="contenedor-main">
+    <form class="contenedor-form" action="/register" method="POST">
+      <section class="contenedor-casillas">
+        <div class="casillas">
+          <input class="casillas-input"  type="text" name="name" placeholder="Nombre y apellido" required minlength="6" />
+        </div>
 
-      <div>
-        <input type="text" name="nickname" placeholder="Nombre de usuari@" />
-      </div>
+        <div class="casillas">
+          <input class="casillas-input"  type="text" name="nickname" placeholder="Nombre de usuari@"/>
+        </div>
 
-      <div>
-        <label for="birthdate"> Fecha de nacimiento</label>
-        <input type="date" min="1960-01-01" max="2022-01-01" name="birthdate" placeholder="Fecha de nacimiento">
-      </div>
+        <div class="casillas">
+          <input class="casillas-input" type="text" name="address" placeholder="Domicilio" required minlength="6" />
+        </div>
 
-      <div>
-        <input type="text" name="address" placeholder="Domicilio" />
-      </div>
+        <div class="casillas">
+          <p class="categoria">Perfil de usuario</p>
+          <label>
+            <input type="radio" name="Perfil" value="Comprar">Comprar
+          </label>
 
-      <div>
-        <p>Perfil de usuario</p>
-        <label>
-          <input type="radio" name="Perfil" value="Comprar">Comprar
-        </label>
+          <label>
+            <input type="radio" name="Perfil" value="Vender">Vender
+          </label>
+        </div>
 
-        <label>
-          <input type="radio" name="Perfil" value="Vender">Vender
-        </label>
-      </div>
+        <div class="casillas">
+          <label class="categoria" for="birthdate"> Fecha de nacimiento</label>
+          <input type="date" min="1960-01-01" max="2022-01-01" name="birthdate" placeholder="Fecha de nacimiento">
+        </div>
+        
+        <div class="casillas">
+          <p class="categoria">Categorías de interés</p>
+          <label>
+            <input type="checkbox" name="categoría" value="Electro">Electro
+          </label>
 
-      <div>
-        <p>Categorías de interés</p>
-        <label>
-          <input type="checkbox" name="categoría" value="Electro">Electro
-        </label>
+          <label>
+            <input type="checkbox" name="categoría" value="Moda">Moda
+          </label>
 
-        <label>
-          <input type="checkbox" name="categoría" value="Moda">Moda
-        </label>
+          <label>
+            <input type="checkbox" name="categoría" value="Hogar">Hogar
+          </label>
 
-        <label>
-          <input type="checkbox" name="categoría" value="Hogar">Hogar
-        </label>
+          <label>
+            <input type="checkbox" name="categoría" value="Juguetería">Juguetería
+          </label>
 
-        <label>
-          <input type="checkbox" name="categoría" value="Juguetería">Juguetería
-        </label>
+          <label>
+            <input type="checkbox" name="categoría" value="Vida sana">Vida sana
+          </label>
+        </div class="casillas">
 
-        <label>
-          <input type="checkbox" name="categoría" value="Vida sana">Vida sana
-        </label>
-      </div>
+        <div class="casilla-foto">
+          <label for="file"> Foto de usuario</label>
+          <input style="color: transparent;" type="file" name="file"  id="file" accept=".jpg, .png," multiple />
+        </div>
 
-      <div>
-        <label for="file"> Foto de usuario</label>
-        <input type="file" name="file" id="file" />
-      </div>
+        <div class="casillas">
+          <input class="casillas-input" type="password" name="password" placeholder="contraseña" required minlength="8" />
+        </div>
 
-      <div>
-        <input type="password" name="password" placeholder="contraseña" />
-      </div>
-
-      <div>
-        <input type="password" name="password" placeholder="Confirmar contraseña" />
-      </div>
-
-      <button type="submit"> Enviar</button>
-      <button type="reset">Borrar datos del formulario</button>
-
-
+        <div class="casillas">
+          <input class="casillas-input" type="password" name="password" placeholder="Confirmar contraseña" required minlength="8"/>
+        </div>
+        
+        <button class="casillas" type="reset">Borrar datos del formulario</button>
+        <button class="boton" type="submit"> Enviar</button>
+      </section>
     </form>
 
   </main>
 
   <footer>
-    <div class="credito">
-      <i class="fa-brands fa-cc-visa tarjeta"></i>
-    </div>
+    <section>
+      <div class="credito">
+        <i class="fa-brands fa-cc-visa tarjeta"></i>
+      </div>
+      <p class="footer_titulo">Pagá con tarjeta o en efectivo</p>
+      <p class="footer_centrado">
+        Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo
+        en puntos de pago. ¡Y siempre es seguro!
+      </p>
+    </section>
+    
+    <section>
+      <div class="regalo">
+        <i class="fa-solid fa-gift icono-regalo"></i>
+      </div>
 
-    <p class="footer_titulo">Pagá con tarjeta o en efectivo</p>
-    <p class="footer_centrado">
-      Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo
-      en puntos de pago. ¡Y siempre es seguro!
-    </p>
-    <br />
-    <br />
-    <div class="regalo">
-      <i class="fa-solid fa-gift icono-regalo"></i>
-    </div>
+      <p class="footer_titulo">Envío gratis desde $ 2.500</p>
+      <p class="footer_centrado">
+        Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles
+        de productos. Es un beneficio de Mercado Puntos.
+      </p>
+    </section>
+    
+    <section>
+      <div class="seguridad">
+        <i class="fa-solid fa-user-shield icono-seguridad"></i>
+      </div>
 
-    <p class="footer_titulo">Envío gratis desde $ 2.500</p>
-    <p class="footer_centrado">
-      Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles
-      de productos. Es un beneficio de Mercado Puntos.
-    </p>
-    <br />
-    <br />
-    <div class="seguridad">
-      <i class="fa-solid fa-user-shield icono-seguridad"></i>
-    </div>
-
-    <p class="footer_titulo">Seguridad, de principio a fin</p>
-    <p class="footer_centrado">
-      ¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas
-      hacer, porque estás siempre protegid@.
-    </p>
-    <br />
-    <br />
+      <p class="footer_titulo">Seguridad, de principio a fin</p>
+      <p class="footer_centrado">
+        ¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas
+        hacer, porque estás siempre protegid@.
+      </p>
+    </section>
+    
     <p>Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+
   </footer>
 </body>
 
